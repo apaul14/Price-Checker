@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 
+//logging 
+const morgan = require('morgan')
+app.use(morgan('dev'))
+
 //body parsing middleware
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
@@ -14,6 +18,7 @@ app.get('/', (req, res) => res.send('sup World!'))
 // matches all requests to /api
 //app.use('/api', require('./api')) 
 
+// error handler
 app.use(function(err, req, res, next) {
   console.error(err);
   console.error(err.stack);
