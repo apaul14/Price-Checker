@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const port = process.env.PORT || 3000
 app.get('/', (req, res) => res.send('sup World!'))
 
-// matches all requests to /api
-//app.use('/api', require('./api')) 
+//matches all requests to /api
+app.use('/api', require('./api')) 
 
 // error handler
 app.use(function(err, req, res, next) {

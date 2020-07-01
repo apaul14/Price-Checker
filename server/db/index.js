@@ -1,7 +1,7 @@
-const db = require("./database")
-const Categories = require("./models/Categories")
-const Items = require("./models/Categories")
-const Stores = require("./models/Stores")
+const db = require('./database')
+const Categories = require('./models/Categories')
+const Items = require('./models/Categories')
+const Stores = require('./models/Stores')
 
 //Items.hasMany(Stores)
 //Items.hasMany(Categories)
