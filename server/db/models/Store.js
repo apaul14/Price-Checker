@@ -18,6 +18,4 @@ const Store = db.define('stores', {
   }
 })
 
-module.exports = {
-  Store
-}
+module.exports = Store

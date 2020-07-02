@@ -1,17 +1,18 @@
 const db = require('./database')
-const Categories = require('./models/Categories')
-const Items = require('./models/Categories')
-const Stores = require('./models/Stores')
+//const Category = require('./models/Category')
+const Item = require('./models/Item')
+const Store = require('./models/Store')
 
-//Items.hasMany(Stores)
-//Items.hasMany(Categories)
-//Stores.hasMany(Items)
+//Items.hasMany(Store)
+//Items.hasMany(Category)
+//Stores.hasMany(Item)
 
-Items.belongsToMany(Stores, {through: 'Pricing Info'})
-Stores.belongsToMany(Items, {through: 'Pricing Info'})
 
-Items.belongsToMany(Categories, {through: 'Item Categories'})
-Categories.hasMany(Items, {through: 'Item Categories'})
+Item.belongsToMany(Store, {through: 'pricing info'})
+Store.belongsToMany(Item, {through: 'pricing info'})
+
+//Items.belongsToMany(Category, {through: 'Item Categories'})
+//Category.hasMany(Item, {through: 'Item Categories'})
 
 
 
@@ -19,7 +20,7 @@ Categories.hasMany(Items, {through: 'Item Categories'})
 
 module.exports = {
   db,
-  Categories,
-  Items,
-  Stores
+  //Categories,
+  Item,
+  Store
 }

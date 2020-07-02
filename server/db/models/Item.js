@@ -1,7 +1,9 @@
-const Sequelize = require("sequelize")
-const db = require("../database")
+const Sequelize = require('sequelize')
+const db = require('../database')
 
-const Item = db.define("items",{
+//console.log(db)
+
+const Item = db.define('items', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -11,10 +13,10 @@ const Item = db.define("items",{
   },
   brand : {
     type: Sequelize.STRING,
-    defaultValue: "Generic/No Brand"
+    defaultValue: 'Generic/No Brand'
   },
   upc: {
-    type: Sequelize.Integer
+    type: Sequelize.INTEGER
   },
   rating: {
     type: Sequelize.INTEGER,
@@ -23,6 +25,5 @@ const Item = db.define("items",{
   }
 })
 
-module.exports = {
-  Item
-}
+module.exports = Item
+

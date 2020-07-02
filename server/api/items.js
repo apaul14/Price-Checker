@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const Item = require('../db')
+const {Item} = require('../db')
 
 router.get('/', async (req, res, next) => {
   try {
@@ -24,5 +24,19 @@ router.get('/:id', async (req, res, next) => {
     }
   } catch (error) {
     next(error)
+  }
+})
+
+router.post('/', async (req, res, next) => {
+  try {
+    const newItem = await Item.create({
+      name: req.body.name,
+      brand: req.body.brand,
+      upc: req.body.upc,  
+      rating: req.body.rating
+    })
+    res.status(201).send(newTour)
+  } catch (error) {
+   next(error)
   }
 })
