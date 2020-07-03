@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Item} = require('../db')
+const {Item} = require('../db') 
 
 router.get('/', async (req, res, next) => {
   try {
@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const item = await Item.findByPK(req.params.id)
+    const item = await Item.findByPk(req.params.id)
     if (item) {
       res.status(200).send(item)
     } else {
@@ -35,8 +35,10 @@ router.post('/', async (req, res, next) => {
       upc: req.body.upc,  
       rating: req.body.rating
     })
-    res.status(201).send(newTour)
+    res.status(201).send(newItem)
   } catch (error) {
    next(error)
   }
 })
+
+module.exports = router
