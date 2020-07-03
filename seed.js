@@ -2,7 +2,7 @@ const {db} = require('./server/db')
 const { green, red } = require("chalk");
 
 const {Item} = require('./server/db')
-//const Category = require('./server/database/Category')
+const {Category} = require('./server/db')
 const {Store} = require('./server/db')
 
 // const Item = require('./server/db/models/Item')
@@ -20,6 +20,15 @@ const items = [
     brand: 'Kellogs',
     upc: 987654321,
     rating: 3
+  }
+]
+
+const categories = [
+  {
+    name: 'Cereal'
+  },
+  {
+    name: 'Candy'
   }
 ]
 
@@ -43,6 +52,10 @@ const seed = async () => {
     )
     await Promise.all(
       stores.map(store => Store.create(store))
+    )
+
+    await Promise.all(
+      categories.map(category => Category.create(category))
     )
 
     console.log(green("Seeding success!"))

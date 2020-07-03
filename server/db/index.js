@@ -12,7 +12,7 @@ Item.belongsToMany(Store, {through: 'pricing info'})
 Store.belongsToMany(Item, {through: 'pricing info'})
 
 Item.belongsToMany(Category, {through: 'item categories'})
-Category.hasMany(Item, {through: 'item categories'})
+Category.belongsToMany(Item, {through: 'item categories'})
 
 
 
