@@ -5,7 +5,7 @@ router.get('/help', (req, res, next) => {
 })
 
 router.use('/items', require('./items'))
-// router.use('/stores', require('./stores'))
+router.use('/stores', require('./stores'))
 // router.use('/categories', require('./categories'))
 
 router.use((req, res, next) => {
