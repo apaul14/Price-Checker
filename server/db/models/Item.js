@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../database')
 
-//console.log(db)
-
 const Item = db.define('items', {
   name: {
     type: Sequelize.STRING,
