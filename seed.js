@@ -29,6 +29,9 @@ const categories = [
   },
   {
     name: 'Candy'
+  },
+  {
+    name: "Drinks"
   }
 ]
 
