@@ -9,9 +9,13 @@ const Item = db.define('items', {
       notEmpty: true
     }
   },
-  brand : {
+  brand: {
     type: Sequelize.STRING,
     defaultValue: 'Generic/No Brand'
+  },
+  price: {
+    type: Sequelize.DECIMAL(10,2),
+    defaultValue: 0.99
   },
   upc: {
     type: Sequelize.INTEGER
