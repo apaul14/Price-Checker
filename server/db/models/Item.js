@@ -14,7 +14,7 @@ const Item = db.define('items', {
     defaultValue: 'Generic/No Brand'
   },
   price: {
-    type: Sequelize.DECIMAL(10,2),
+    type: Sequelize.DECIMAL,
     defaultValue: 0.99
   },
   upc: {
