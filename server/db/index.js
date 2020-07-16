@@ -8,8 +8,9 @@ const Store = require('./models/Store')
 //Stores.hasMany(Item)
 
 
-Item.belongsToMany(Store, {through: 'pricing info'})
-Store.belongsToMany(Item, {through: 'pricing info'})
+Item.belongsToMany(Store, {through: 'pricing'})
+
+Store.belongsToMany(Item, {through: 'pricing'})
 
 Item.belongsToMany(Category, {through: 'item categories'})
 Category.belongsToMany(Item, {through: 'item categories'})

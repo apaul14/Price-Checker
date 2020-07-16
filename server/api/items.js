@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Item} = require('../db') 
+const {Item, db} = require('../db') 
 
 router.get('/', async (req, res, next) => {
   try {
@@ -35,6 +35,15 @@ router.post('/', async (req, res, next) => {
       upc: req.body.upc,  
       rating: req.body.rating
     })
+    //const priceInfo = await db.model('price info')
+    //await priceInfo.addPrice()
+
+    //const pricing = db.model('pricing')
+    
+    Item.setPrice(Item.Id)
+
+    //console.log(pricing)
+
     res.status(201).send(newItem)
   } catch (error) {
    next(error)
