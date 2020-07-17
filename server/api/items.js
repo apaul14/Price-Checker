@@ -35,16 +35,15 @@ router.post('/', async (req, res, next) => {
       upc: req.body.upc,  
       rating: req.body.rating
     })
-    //const priceInfo = await db.model('price info')
-    //await priceInfo.addPrice()
 
-    //const pricing = db.model('pricing')
-    
-    Item.setPrice(Item.Id)
-
-    //console.log(pricing)
+    const pricing = db.model('pricing')
+    const newPrice = await pricing.create({
+      itemId: newItem.id,
+      storeId: 1 //MUST CHANGE THIS TO NON - PLACEHOLDER VALUE
+    })
 
     res.status(201).send(newItem)
+    //res.status(201).send(newPrice)
   } catch (error) {
    next(error)
   }
