@@ -9,7 +9,6 @@ const Store = require('./models/Store')
 
 
 Item.belongsToMany(Store, {through: 'pricing'})
-
 Store.belongsToMany(Item, {through: 'pricing'})
 
 Item.belongsToMany(Category, {through: 'item categories'})

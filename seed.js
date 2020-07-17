@@ -56,7 +56,6 @@ const seed = async () => {
     await Promise.all(
       stores.map(store => Store.create(store))
     )
-
     await Promise.all(
       categories.map(category => Category.create(category))
     )
