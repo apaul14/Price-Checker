@@ -35,7 +35,7 @@ router.post('/', async (req, res, next) => {
       upc: req.body.upc,  
       rating: req.body.rating
     })
-
+    //should move pricing queries/writes to different routes /folders
     const pricing = db.model('pricing')
     const newPrice = await pricing.create({
       itemId: newItem.id,
